@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MAT037 Sample Test Answers</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: one centred reading column, tabs for sets, questions stacked below.
+   Palette: cool paper and ink, one deep teal accent used for selection and answers. */
+:root {
+  --bg: #f5f7f8;
+  --fg: #16202a;
+  --muted: #5d6b78;
+  --accent: #1d5c74;
+  --line: #d6dee4;
+  --ans: #e6f0f3;
+  --accent-ink: #f5f7f8;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101418;
+    --fg: #e4e9ee;
+    --muted: #98a4b0;
+    --accent: #7cc0d6;
+    --line: #2a3440;
+    --ans: #17242c;
+    --accent-ink: #101418;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101418;
+  --fg: #e4e9ee;
+  --muted: #98a4b0;
+  --accent: #7cc0d6;
+  --line: #2a3440;
+  --ans: #17242c;
+  --accent-ink: #101418;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 15px/1.6 "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding-block: 20px 32px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 760px; margin: 0 auto; }
+header.top {
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted);
+  border-bottom: 1px solid var(--line); padding-bottom: 10px;
+}
+h1 {
+  font: 600 28px/1.2 "IBM Plex Serif", Georgia, serif;
+  margin: 18px 0 6px; text-wrap: balance;
+}
+.lede { margin: 0 0 18px; color: var(--muted); }
+.tabs {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  padding-bottom: 14px; border-bottom: 1px solid var(--line);
+}
+button {
+  font: inherit; color: var(--fg); background: transparent; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px;
+}
+button:hover { border-color: var(--accent); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button[aria-selected="true"] {
+  background: var(--accent); border-color: var(--accent); color: var(--accent-ink);
+}
+h2 {
+  font: 600 22px/1.3 "IBM Plex Serif", Georgia, serif;
+  margin: 26px 0 4px;
+}
+.qhead {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  margin-top: 26px; border-top: 1px solid var(--line); padding-top: 16px;
+}
+.qhead h3 { font: 600 17px/1.3 "IBM Plex Sans", sans-serif; margin: 0; letter-spacing: 0.01em; }
+.part {
+  display: grid; grid-template-columns: 3.2em 1fr; gap: 4px 10px;
+  padding-block: 12px; border-bottom: 1px dotted var(--line);
+}
+.part:last-child { border-bottom: 0; }
+.lab { font-weight: 600; color: var(--muted); }
+.qtext { min-width: 0; }
+.marks { display: block; text-align: right; color: var(--muted); font-size: 12.5px; white-space: nowrap; margin-top: 2px; }
+.row-btns { grid-column: 2; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+.row-btns button { font-size: 13px; padding: 4px 10px; }
+.answer {
+  grid-column: 2; min-width: 0;
+  background: var(--ans); border-left: 3px solid var(--accent);
+  padding: 10px 12px; border-radius: 4px;
+}
+.answer[hidden] { display: none; }
+.sub { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+.tablewrap { overflow-x: auto; max-width: 100%; margin: 8px 0 2px; }
+table.grid { border-collapse: collapse; width: 100%; max-width: 420px; }
+table.grid th, table.grid td {
+  border: 1px solid var(--line); padding: 6px 10px; text-align: center; min-width: 6.5em;
+}
+table.grid th { font-weight: 600; font-size: 13px; color: var(--muted); }
+.frac {
+  display: inline-flex; flex-direction: column; align-items: center;
+  vertical-align: middle; font-size: 0.9em; line-height: 1.15; margin: 0 2px;
+}
+.frac .num { border-bottom: 1px solid currentColor; padding: 0 3px; }
+.frac .den { padding: 0 3px; }
+sup, sub { font-size: 0.72em; line-height: 0; }
+.end { margin: 26px 0 0; text-align: center; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; }
+footer {
+  margin-top: 36px; padding-top: 12px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span>mathsyafiq.com</span>
+    <span>MAT037 &middot; Sample Test</span>
+  </header>
+
+  <h1>MAT037 Sample Test Answers</h1>
+  <p class="lede">Choose a practice set, then reveal the answer for any part. Use &ldquo;Show all&rdquo; to reveal every part of one question.</p>
+
+  <nav class="tabs" role="tablist" aria-label="Practice sets"></nav>
+  <main id="panel" role="tabpanel"></main>
+
+  <footer>
+    <span>15 October 2026</span>
+    <span>Practice Sets 1&ndash;5</span>
+  </footer>
+</div>
+
+<script>
+/* ------------------------------------------------------------------
+   Content. Math is written inside $...$ with @ as the command prefix:
+   @frac{a}{b}, @times, @div, @neq, @pm, and ^ / _ for powers and subscripts.
+   ------------------------------------------------------------------ */
+var SETS = [
+{ no: 1, questions: [
+  { parts: [
+    { l: "(a)", t: "Complete the following table.", m: "3 marks",
+      tb: { h: ["FRACTION", "DECIMAL", "PERCENTAGE (%)"], r: [["$@frac{5}{4}$", "", ""], ["", "0.375", ""], ["", "", "125%"]] },
+      at: [["$@frac{5}{4}$", "$1.25$", "$125%$"], ["$@frac{3}{8}$", "$0.375$", "$37.5%$"], ["$@frac{5}{4}$", "$1.25$", "$125%$"]] },
+    { l: "(b)(i)", t: "Evaluate without using a calculator: $[-(4+6) @div 2] + 3^2$", m: "3 marks",
+      a: "$[-10 @div 2] + 9 = -5 + 9 = 4$" },
+    { l: "(b)(ii)", t: "Evaluate without using a calculator: $18 + [8 @div 4 - 5(3+2) + 7]$", m: "3 marks",
+      a: "$18 + [2 - 25 + 7] = 18 - 16 = 2$" },
+    { l: "(c)", t: "Calculate $(5000)(1+0.035)^5$ using a calculator. Round to four decimal places.", m: "1 mark",
+      a: "$5938.4315$" }
+  ]},
+  { parts: [
+    { l: "(a)(i)", t: "Evaluate without using a calculator: $(@frac{3}{5}+@frac{2}{10}) @div (@frac{7}{20} @times @frac{4}{5})$", m: "3 marks",
+      a: "$@frac{4}{5} @div @frac{7}{25} = @frac{20}{7}$" },
+    { l: "(a)(ii)", t: "Evaluate without using a calculator: $@frac{2}{3} - @frac{5}{6}$", m: "2 marks",
+      a: "$@frac{4}{6} - @frac{5}{6} = -@frac{1}{6}$" },
+    { l: "(b)(i)", t: "Expand and simplify: $(4a+3)(5b-2)$", m: "2 marks",
+      a: "$20ab - 8a + 15b - 6$" },
+    { l: "(b)(ii)", t: "Expand and simplify: $(x+4)(x-2) - 5x - x(x-1)$", m: "3 marks",
+      a: "$x^2 + 2x - 8 - 5x - x^2 + x = -2x - 8$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $(3x^2 - 2y^2 - xy) - (y^2 - 4x^2 + xy)$", m: "3 marks",
+      a: "$7x^2 - 2xy - 3y^2$" },
+    { l: "(b)(i)", t: "Factorize completely: $8m^3n^2p^4 - 12m^2n^3p^4 + 4mn^4p^4$", m: "3 marks",
+      a: "$4mn^2p^4(2m - n)(m - n)$" },
+    { l: "(b)(ii)", t: "Factorize completely: $9b^2 - 25$", m: "2 marks",
+      a: "$(3b - 5)(3b + 5)$" },
+    { l: "(b)(iii)", t: "Factorize completely: $x^2 - 10x + 24$", m: "2 marks",
+      a: "$(x - 4)(x - 6)$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $@frac{z^2 + 3z - 10}{z + 5}$", m: "3 marks",
+      a: "$z - 2$, with $z @neq -5$" },
+    { l: "(b)", t: "Simplify: $@frac{x^2 - 16}{x^2 + 6x + 8} @times @frac{x + 4}{x - 2}$", m: "3 marks",
+      a: "$@frac{(x-4)(x+4)}{(x+2)(x+4)} @times @frac{x+4}{x-2} = @frac{(x-4)(x+4)}{(x-2)(x+2)}$, with $x @neq 2, -2, -4$" },
+    { l: "(c)", t: "Simplify completely: $@frac{k^3 - 27}{k^2 - 9} @div @frac{k^2 - 3k}{k^2 + 6k + 9}$", m: "4 marks",
+      a: "$@frac{(k-3)(k^2+3k+9)}{(k-3)(k+3)} @times @frac{(k+3)^2}{k(k-3)} = @frac{(k+3)(k^2+3k+9)}{k(k-3)}$, with $k @neq 0, @pm 3$" }
+  ]}
+]},
+{ no: 2, questions: [
+  { parts: [
+    { l: "(a)", t: "Complete the following table.", m: "3 marks",
+      tb: { h: ["FRACTION", "DECIMAL", "PERCENTAGE (%)"], r: [["$@frac{3}{5}$", "", ""], ["", "0.875", ""], ["", "", "62.5%"]] },
+      at: [["$@frac{3}{5}$", "$0.6$", "$60%$"], ["$@frac{7}{8}$", "$0.875$", "$87.5%$"], ["$@frac{5}{8}$", "$0.625$", "$62.5%$"]] },
+    { l: "(b)(i)", t: "Evaluate without using a calculator: $[-(7+9) @div 4] + 5^2$", m: "3 marks",
+      a: "$[-16 @div 4] + 25 = -4 + 25 = 21$" },
+    { l: "(b)(ii)", t: "Evaluate without using a calculator: $30 + [6 @div 3 - 4(4+1) + 2]$", m: "3 marks",
+      a: "$30 + [2 - 20 + 2] = 30 - 16 = 14$" },
+    { l: "(c)", t: "Calculate $(6000)(1+0.05)^3$ using a calculator. Round to four decimal places.", m: "1 mark",
+      a: "$6945.7500$" }
+  ]},
+  { parts: [
+    { l: "(a)(i)", t: "Evaluate without using a calculator: $(@frac{2}{3}+@frac{1}{6}) @div (@frac{5}{9} @times @frac{3}{4})$", m: "3 marks",
+      a: "$@frac{5}{6} @div @frac{5}{12} = 2$" },
+    { l: "(a)(ii)", t: "Evaluate without using a calculator: $@frac{7}{8} - @frac{3}{4}$", m: "2 marks",
+      a: "$@frac{7}{8} - @frac{6}{8} = @frac{1}{8}$" },
+    { l: "(b)(i)", t: "Expand and simplify: $(5x-2)(3y+4)$", m: "2 marks",
+      a: "$15xy + 20x - 6y - 8$" },
+    { l: "(b)(ii)", t: "Expand and simplify: $(x+6)(x-2) - 9x - x(x+4)$", m: "3 marks",
+      a: "$x^2 + 4x - 12 - 9x - x^2 - 4x = -9x - 12$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $(4a^2 - 3b^2 - 2ab) - (b^2 - 5a^2 + 3ab)$", m: "3 marks",
+      a: "$9a^2 - 5ab - 4b^2$" },
+    { l: "(b)(i)", t: "Factorize completely: $10m^2n^3p^2 - 5mn^4p^2 - 15n^5p^2$", m: "3 marks",
+      a: "$5n^3p^2(2m - 3n)(m + n)$" },
+    { l: "(b)(ii)", t: "Factorize completely: $4b^2 - 49$", m: "2 marks",
+      a: "$(2b - 7)(2b + 7)$" },
+    { l: "(b)(iii)", t: "Factorize completely: $x^2 - 9x + 14$", m: "2 marks",
+      a: "$(x - 2)(x - 7)$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $@frac{y^2 + 5y + 6}{y + 3}$", m: "3 marks",
+      a: "$y + 2$, with $y @neq -3$" },
+    { l: "(b)", t: "Simplify: $@frac{x^2 - 25}{x^2 + 7x + 10} @times @frac{x + 5}{x - 2}$", m: "3 marks",
+      a: "$@frac{(x-5)(x+5)}{(x+2)(x+5)} @times @frac{x+5}{x-2} = @frac{(x-5)(x+5)}{(x-2)(x+2)}$, with $x @neq 2, -2, -5$" },
+    { l: "(c)", t: "Simplify completely: $@frac{p^3 - 8}{p^2 - 4} @div @frac{p^2 - 2p}{p^2 + 4p + 4}$", m: "4 marks",
+      a: "$@frac{(p-2)(p^2+2p+4)}{(p-2)(p+2)} @times @frac{(p+2)^2}{p(p-2)} = @frac{(p+2)(p^2+2p+4)}{p(p-2)}$, with $p @neq 0, @pm 2$" }
+  ]}
+]},
+{ no: 3, questions: [
+  { parts: [
+    { l: "(a)", t: "Complete the following table.", m: "3 marks",
+      tb: { h: ["FRACTION", "DECIMAL", "PERCENTAGE (%)"], r: [["$@frac{9}{10}$", "", ""], ["", "0.125", ""], ["", "", "45%"]] },
+      at: [["$@frac{9}{10}$", "$0.9$", "$90%$"], ["$@frac{1}{8}$", "$0.125$", "$12.5%$"], ["$@frac{9}{20}$", "$0.45$", "$45%$"]] },
+    { l: "(b)(i)", t: "Evaluate without using a calculator: $[-(10-4) @div 3] + 4^2$", m: "3 marks",
+      a: "$[-6 @div 3] + 16 = -2 + 16 = 14$" },
+    { l: "(b)(ii)", t: "Evaluate without using a calculator: $25 + [9 @div 3 - 2(6+2) + 5]$", m: "3 marks",
+      a: "$25 + [3 - 16 + 5] = 25 - 8 = 17$" },
+    { l: "(c)", t: "Calculate $(4500)(1+0.045)^4$ using a calculator. Round to four decimal places.", m: "1 mark",
+      a: "$5366.3337$" }
+  ]},
+  { parts: [
+    { l: "(a)(i)", t: "Evaluate without using a calculator: $(@frac{1}{2}+@frac{3}{8}) @div (@frac{5}{16} @times @frac{4}{5})$", m: "3 marks",
+      a: "$@frac{7}{8} @div @frac{1}{4} = @frac{7}{2}$" },
+    { l: "(a)(ii)", t: "Evaluate without using a calculator: $@frac{5}{6} - @frac{2}{3}$", m: "2 marks",
+      a: "$@frac{5}{6} - @frac{4}{6} = @frac{1}{6}$" },
+    { l: "(b)(i)", t: "Expand and simplify: $(2a+5)(4b-1)$", m: "2 marks",
+      a: "$8ab - 2a + 20b - 5$" },
+    { l: "(b)(ii)", t: "Expand and simplify: $(x+3)(x-5) - 6x - x(x-2)$", m: "3 marks",
+      a: "$x^2 - 2x - 15 - 6x - x^2 + 2x = -6x - 15$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $(5x^2 - y^2 - 2xy) - (2y^2 - 3x^2 + xy)$", m: "3 marks",
+      a: "$8x^2 - 3xy - 3y^2$" },
+    { l: "(b)(i)", t: "Factorize completely: $6m^3n^2p^3 - 9m^2n^3p^3 + 3mn^4p^3$", m: "3 marks",
+      a: "$3mn^2p^3(2m - n)(m - n)$" },
+    { l: "(b)(ii)", t: "Factorize completely: $16b^2 - 81$", m: "2 marks",
+      a: "$(4b - 9)(4b + 9)$" },
+    { l: "(b)(iii)", t: "Factorize completely: $x^2 - 12x + 27$", m: "2 marks",
+      a: "$(x - 3)(x - 9)$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $@frac{z^2 + 4z + 3}{z + 1}$", m: "3 marks",
+      a: "$z + 3$, with $z @neq -1$" },
+    { l: "(b)", t: "Simplify: $@frac{x^2 - 9}{x^2 + 8x + 15} @times @frac{x + 5}{x - 3}$", m: "3 marks",
+      a: "$@frac{(x-3)(x+3)}{(x+3)(x+5)} @times @frac{x+5}{x-3} = 1$, with $x @neq 3, -3, -5$" },
+    { l: "(c)", t: "Simplify completely: $@frac{h^3 - 1}{h^2 - 1} @div @frac{h^2 - h}{h^2 + 2h + 1}$", m: "4 marks",
+      a: "$@frac{(h-1)(h^2+h+1)}{(h-1)(h+1)} @times @frac{(h+1)^2}{h(h-1)} = @frac{(h+1)(h^2+h+1)}{h(h-1)}$, with $h @neq 0, @pm 1$" }
+  ]}
+]},
+{ no: 4, questions: [
+  { parts: [
+    { l: "(a)", t: "Complete the following table.", m: "3 marks",
+      tb: { h: ["FRACTION", "DECIMAL", "PERCENTAGE (%)"], r: [["$@frac{7}{20}$", "", ""], ["", "0.55", ""], ["", "", "175%"]] },
+      at: [["$@frac{7}{20}$", "$0.35$", "$35%$"], ["$@frac{11}{20}$", "$0.55$", "$55%$"], ["$@frac{7}{4}$", "$1.75$", "$175%$"]] },
+    { l: "(b)(i)", t: "Evaluate without using a calculator: $[-(8+3) @div 5] + 2^4$", m: "3 marks",
+      a: "$[-11 @div 5] + 16 = 16 - @frac{11}{5} = @frac{69}{5}$" },
+    { l: "(b)(ii)", t: "Evaluate without using a calculator: $12 + [9 @div 3 - 6(2+3) + 7]$", m: "3 marks",
+      a: "$12 + [3 - 30 + 7] = 12 - 20 = -8$" },
+    { l: "(c)", t: "Calculate $(8000)(1+0.025)^6$ using a calculator. Round to four decimal places.", m: "1 mark",
+      a: "$9277.5473$" }
+  ]},
+  { parts: [
+    { l: "(a)(i)", t: "Evaluate without using a calculator: $(@frac{4}{7}+@frac{3}{14}) @div (@frac{9}{28} @times @frac{7}{6})$", m: "3 marks",
+      a: "$@frac{11}{14} @div @frac{3}{8} = @frac{44}{21}$" },
+    { l: "(a)(ii)", t: "Evaluate without using a calculator: $@frac{3}{5} - @frac{7}{10}$", m: "2 marks",
+      a: "$@frac{6}{10} - @frac{7}{10} = -@frac{1}{10}$" },
+    { l: "(b)(i)", t: "Expand and simplify: $(2y+3)(4x-1)$", m: "2 marks",
+      a: "$8xy - 2y + 12x - 3$" },
+    { l: "(b)(ii)", t: "Expand and simplify: $(x+2)(x-6) - 4x - x(x+3)$", m: "3 marks",
+      a: "$x^2 - 4x - 12 - 4x - x^2 - 3x = -11x - 12$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $(2x^2 - y^2 - 3xy) - (3y^2 - 4x^2 + xy)$", m: "3 marks",
+      a: "$6x^2 - 4xy - 4y^2$" },
+    { l: "(b)(i)", t: "Factorize completely: $9m^3n^2p^3 - 6m^2n^3p^3 - 3mn^4p^3$", m: "3 marks",
+      a: "$3mn^2p^3(3m + n)(m - n)$" },
+    { l: "(b)(ii)", t: "Factorize completely: $25b^2 - 1$", m: "2 marks",
+      a: "$(5b - 1)(5b + 1)$" },
+    { l: "(b)(iii)", t: "Factorize completely: $x^2 - 8x + 12$", m: "2 marks",
+      a: "$(x - 2)(x - 6)$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $@frac{y^2 + 2y - 15}{y + 5}$", m: "3 marks",
+      a: "$y - 3$, with $y @neq -5$" },
+    { l: "(b)", t: "Simplify: $@frac{x^2 - 16}{x^2 + 5x + 6} @times @frac{x + 4}{x - 2}$", m: "3 marks",
+      a: "$@frac{(x-4)(x+4)}{(x+2)(x+3)} @times @frac{x+4}{x-2} = @frac{(x-4)(x+4)^2}{(x-2)(x+2)(x+3)}$, with $x @neq 2, -2, -3$" },
+    { l: "(c)", t: "Simplify completely: $@frac{r^3 - 8}{r^2 - 4} @div @frac{r^2 - 2r}{r^2 + 4r + 4}$", m: "4 marks",
+      a: "$@frac{(r-2)(r^2+2r+4)}{(r-2)(r+2)} @times @frac{(r+2)^2}{r(r-2)} = @frac{(r+2)(r^2+2r+4)}{r(r-2)}$, with $r @neq 0, @pm 2$" }
+  ]}
+]},
+{ no: 5, questions: [
+  { parts: [
+    { l: "(a)", t: "Complete the following table.", m: "3 marks",
+      tb: { h: ["FRACTION", "DECIMAL", "PERCENTAGE (%)"], r: [["$@frac{12}{5}$", "", ""], ["", "3.625", ""], ["", "", "830%"]] },
+      at: [["$@frac{12}{5}$", "$2.4$", "$240%$"], ["$@frac{29}{8}$", "$3.625$", "$362.5%$"], ["$@frac{83}{10}$", "$8.3$", "$830%$"]] },
+    { l: "(b)(i)", t: "Evaluate without using a calculator: $[-(5+2) @div 3] + 6^2$", m: "3 marks",
+      a: "$[-7 @div 3] + 36 = 36 - @frac{7}{3} = @frac{101}{3}$" },
+    { l: "(b)(ii)", t: "Evaluate without using a calculator: $40 + [10 @div 5 - 3(8+1) + 4]$", m: "3 marks",
+      a: "$40 + [2 - 27 + 4] = 40 - 21 = 19$" },
+    { l: "(c)", t: "Calculate $(9000)(1+0.06)^2$ using a calculator. Round to four decimal places.", m: "1 mark",
+      a: "$10112.4000$" }
+  ]},
+  { parts: [
+    { l: "(a)(i)", t: "Evaluate without using a calculator: $(@frac{5}{8}+@frac{1}{4}) @div (@frac{3}{16} @times @frac{8}{5})$", m: "3 marks",
+      a: "$@frac{7}{8} @div @frac{3}{10} = @frac{35}{12}$" },
+    { l: "(a)(ii)", t: "Evaluate without using a calculator: $@frac{4}{9} - @frac{1}{3}$", m: "2 marks",
+      a: "$@frac{4}{9} - @frac{3}{9} = @frac{1}{9}$" },
+    { l: "(b)(i)", t: "Expand and simplify: $(3y+5)(2x-3)$", m: "2 marks",
+      a: "$6xy - 9y + 10x - 15$" },
+    { l: "(b)(ii)", t: "Expand and simplify: $(x+1)(x-7) - 8x - x(x+2)$", m: "3 marks",
+      a: "$x^2 - 6x - 7 - 8x - x^2 - 2x = -16x - 7$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $(4x^2 - 2y^2 - 5xy) - (2y^2 - 3x^2 + xy)$", m: "3 marks",
+      a: "$7x^2 - 6xy - 4y^2$" },
+    { l: "(b)(i)", t: "Factorize completely: $12m^2n^3p^4 - 18mn^4p^4 + 6n^5p^4$", m: "3 marks",
+      a: "$6n^3p^4(2m - n)(m - n)$" },
+    { l: "(b)(ii)", t: "Factorize completely: $36b^2 - 49$", m: "2 marks",
+      a: "$(6b - 7)(6b + 7)$" },
+    { l: "(b)(iii)", t: "Factorize completely: $x^2 - 11x + 28$", m: "2 marks",
+      a: "$(x - 4)(x - 7)$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $@frac{t^2 + 3t - 10}{t + 5}$", m: "3 marks",
+      a: "$t - 2$, with $t @neq -5$" },
+    { l: "(b)", t: "Simplify: $@frac{x^2 - 36}{x^2 + 9x + 20} @times @frac{x + 6}{x - 4}$", m: "3 marks",
+      a: "$@frac{(x-6)(x+6)}{(x+4)(x+5)} @times @frac{x+6}{x-4} = @frac{(x-6)(x+6)^2}{(x-4)(x+4)(x+5)}$, with $x @neq 4, -4, -5$" },
+    { l: "(c)", t: "Simplify completely: $@frac{s^3 - 27}{s^2 - 9} @div @frac{s^2 - 3s}{s^2 + 6s + 9}$", m: "4 marks",
+      a: "$@frac{(s-3)(s^2+3s+9)}{(s-3)(s+3)} @times @frac{(s+3)^2}{s(s-3)} = @frac{(s+3)(s^2+3s+9)}{s(s-3)}$, with $s @neq 0, @pm 3$" }
+  ]}
+]}
+];
+
+/* ------------------------------------------------------------------
+   Tiny converter: math notation -> HTML (no external CSS or fonts needed)
+   ------------------------------------------------------------------ */
+var SYM = { times: "×", div: "÷", cdot: "·", neq: "≠", pm: "±", le: "≤", ge: "≥" };
+function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+function grp(s, i) {
+  var d = 0;
+  for (var j = i; j < s.length; j++) {
+    if (s[j] === "{") d++;
+    else if (s[j] === "}") { d--; if (d === 0) return [s.slice(i + 1, j), j + 1]; }
+  }
+  return [s.slice(i + 1), s.length];
+}
+function math(s) {
+  var out = "", i = 0;
+  while (i < s.length) {
+    var c = s[i];
+    if (c === "@") {
+      var m = /^[a-zA-Z]+|^[ ,;!]/.exec(s.slice(i + 1));
+      if (!m) { i++; continue; }
+      var name = m[0];
+      i += 1 + name.length;
+      if (name === "frac") {
+        var a = grp(s, i); var b = grp(s, a[1]); i = b[1];
+        out += '<span class="frac"><span class="num">' + math(a[0]) + '</span><span class="den">' + math(b[0]) + "</span></span>";
+      } else if (SYM[name]) out += SYM[name];
+      else if (name === " " || name === "," || name === ";" || name === "!") out += " ";
+      else out += esc(name);
+    } else if (c === "^" || c === "_") {
+      i++;
+      var arg;
+      if (s[i] === "{") { var g = grp(s, i); arg = g[0]; i = g[1]; }
+      else { arg = s[i] || ""; i++; }
+      var tag = c === "^" ? "sup" : "sub";
+      out += "<" + tag + ">" + math(arg) + "</" + tag + ">";
+    } else if (c === "{" || c === "}") { i++; }
+    else { out += esc(c); i++; }
+  }
+  return out;
+}
+function rich(s) {
+  var parts = s.split("$"), out = "";
+  for (var k = 0; k < parts.length; k++) {
+    if (k % 2 === 0) out += esc(parts[k]).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    else out += '<span class="m">' + math(parts[k]) + "</span>";
+  }
+  return out;
+}
+function tableHTML(head, rows) {
+  var h = '<div class="tablewrap"><table class="grid"><thead><tr>';
+  for (var i = 0; i < head.length; i++) h += "<th>" + esc(head[i]) + "</th>";
+  h += "</tr></thead><tbody>";
+  for (var r = 0; r < rows.length; r++) {
+    h += "<tr>";
+    for (var c = 0; c < rows[r].length; c++) h += "<td>" + rich(rows[r][c]) + "</td>";
+    h += "</tr>";
+  }
+  return h + "</tbody></table></div>";
+}
+
+/* ------------------------------------------------------------------
+   Page behaviour: tabs, per-part answers, per-question "Show all"
+   ------------------------------------------------------------------ */
+var tabsEl = document.querySelector(".tabs");
+var panel = document.getElementById("panel");
+
+function buildSet(idx) {
+  var set = SETS[idx];
+  var html = '<h2>Practice Set ' + set.no + "</h2>";
+  for (var q = 0; q < set.questions.length; q++) {
+    var Q = set.questions[q];
+    html += '<section class="q" data-q="' + (q + 1) + '">';
+    html += '<div class="qhead"><h3>Question ' + (q + 1) + '</h3>' +
+            '<button type="button" class="showall" aria-expanded="false">Show all</button></div>';
+    for (var p = 0; p < Q.parts.length; p++) {
+      var P = Q.parts[p];
+      html += '<div class="part"><span class="lab">' + esc(P.l) + '</span>' +
+              '<div class="qtext">' + rich(P.t) + (P.tb ? tableHTML(P.tb.h, P.tb.r) : "") +
+              '<span class="marks">(' + esc(P.m) + ")</span></div>" +
+              '<div class="row-btns"><button type="button" class="reveal" aria-expanded="false">Show answer</button></div>' +
+              '<div class="answer" hidden></div></div>';
+    }
+    html += "</section>";
+  }
+  return html;
+}
+
+function fillAnswer(part, idx, q, p) {
+  if (part.dataset.filled) return;
+  var P = SETS[idx].questions[q].parts[p];
+  var inner = "";
+  if (P.at) inner += tableHTML(P.tb.h, P.at);
+  if (P.a) inner += "<div>" + rich(P.a) + "</div>";
+  part.innerHTML = inner;
+  part.dataset.filled = "1";
+}
+
+function showTab(idx, pushHash) {
+  var buttons = tabsEl.querySelectorAll("button");
+  for (var i = 0; i < buttons.length; i++) buttons[i].setAttribute("aria-selected", i === idx ? "true" : "false");
+  panel.innerHTML = buildSet(idx);
+  if (pushHash) { try { history.replaceState(null, "", "#set" + SETS[idx].no); } catch (e) {} }
+}
+
+function setAnswer(btn, show) {
+  var part = btn.closest(".part");
+  var ans = part.querySelector(".answer");
+  if (show) { fillAnswer(ans, currentIdx, qIndex(btn), pIndex(part)); }
+  ans.hidden = !show;
+  btn.textContent = show ? "Hide answer" : "Show answer";
+  btn.setAttribute("aria-expanded", show ? "true" : "false");
+}
+function qIndex(el) { return Number(el.closest(".q").dataset.q) - 1; }
+function pIndex(part) {
+  var parts = part.closest(".q").querySelectorAll(".part");
+  for (var i = 0; i < parts.length; i++) if (parts[i] === part) return i;
+  return 0;
+}
+
+var currentIdx = 0;
+
+tabsEl.innerHTML = SETS.map(function (s, i) {
+  return '<button type="button" role="tab" aria-selected="false" data-i="' + i + '">Set ' + s.no + "</button>";
+}).join("");
+
+tabsEl.addEventListener("click", function (e) {
+  var b = e.target.closest("button[data-i]");
+  if (!b) return;
+  currentIdx = Number(b.dataset.i);
+  showTab(currentIdx, true);
+});
+
+panel.addEventListener("click", function (e) {
+  var btn = e.target.closest("button");
+  if (!btn) return;
+  if (btn.classList.contains("reveal")) {
+    setAnswer(btn, btn.getAttribute("aria-expanded") !== "true");
+  } else if (btn.classList.contains("showall")) {
+    var sec = btn.closest(".q");
+    var reveals = sec.querySelectorAll("button.reveal");
+    var openAll = btn.getAttribute("aria-expanded") !== "true";
+    for (var i = 0; i < reveals.length; i++) setAnswer(reveals[i], openAll);
+    btn.textContent = openAll ? "Hide all" : "Show all";
+    btn.setAttribute("aria-expanded", openAll ? "true" : "false");
+  }
+});
+
+// Deep link to a set with a bare token, e.g. #set3
+var start = 0;
+var m = /^set(\d)$/.exec(location.hash.slice(1));
+if (m) { var n = Number(m[1]) - 1; if (n >= 0 && n < SETS.length) start = n; }
+currentIdx = start;
+showTab(start, false);
+</script>
+</body>
+</html>
