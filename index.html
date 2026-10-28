@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MAT037 Sample Test Answers</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
 <style>
 /* Layout: one centred reading column, tabs for sets, questions stacked below.
@@ -119,8 +115,7 @@ footer {
   font-size: 12.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
 }
 </style>
-</head>
-<body>
+
 <div class="wrap">
   <header class="top">
     <span>mathsyafiq.com</span>
@@ -134,8 +129,8 @@ footer {
   <main id="panel" role="tabpanel"></main>
 
   <footer>
-    <span>15 October 2026</span>
-    <span>Practice Sets 1&ndash;5</span>
+    <span>28 October 2026</span>
+    <span>Practice Sets 1&ndash;10</span>
   </footer>
 </div>
 
@@ -349,6 +344,211 @@ var SETS = [
     { l: "(c)", t: "Simplify completely: $@frac{s^3 - 27}{s^2 - 9} @div @frac{s^2 - 3s}{s^2 + 6s + 9}$", m: "4 marks",
       a: "$@frac{(s-3)(s^2+3s+9)}{(s-3)(s+3)} @times @frac{(s+3)^2}{s(s-3)} = @frac{(s+3)(s^2+3s+9)}{s(s-3)}$, with $s @neq 0, @pm 3$" }
   ]}
+]},
+{ no: 6, questions: [
+  { parts: [
+    { l: "(a)", t: "Complete the following table.", m: "3 marks",
+      tb: { h: ["FRACTION", "DECIMAL", "PERCENTAGE (%)"], r: [["$@frac{7}{8}$", "", ""], ["", "0.15", ""], ["", "", "240%"]] },
+      at: [["$@frac{7}{8}$", "$0.875$", "$87.5%$"], ["$@frac{3}{20}$", "$0.15$", "$15%$"], ["$@frac{12}{5}$", "$2.4$", "$240%$"]] },
+    { l: "(b)(i)", t: "Evaluate without using a calculator: $[ - ( 9 - 3 ) @div 2 ] + 5^2$", m: "3 marks",
+      a: "$[-6 @div 2] + 25 = -3 + 25 = 22$" },
+    { l: "(b)(ii)", t: "Evaluate without using a calculator: $15 + [ 12 @div 4 - 4(2 + 5) + 9 ]$", m: "3 marks",
+      a: "$15 + [3 - 28 + 9] = 15 - 16 = -1$" },
+    { l: "(c)", t: "Calculate $(6000)(1 + 0.04)^3$ using a calculator. Round to four decimal places.", m: "1 mark",
+      a: "$(6000)(1.124864) = 6749.1840$" }
+  ]},
+  { parts: [
+    { l: "(a)(i)", t: "Evaluate without using a calculator: $( @frac{2}{3} + @frac{1}{6} ) @div ( @frac{3}{10} @times @frac{5}{8} )$", m: "3 marks",
+      a: "$@frac{5}{6} @div @frac{3}{16} = @frac{5}{6} @times @frac{16}{3} = @frac{40}{9}$" },
+    { l: "(a)(ii)", t: "Evaluate without using a calculator: $@frac{5}{6} - @frac{3}{8}$", m: "2 marks",
+      a: "$@frac{20}{24} - @frac{9}{24} = @frac{11}{24}$" },
+    { l: "(b)(i)", t: "Expand and simplify: $(4y - 3)(2x + 5)$", m: "2 marks",
+      a: "$8xy + 20y - 6x - 15$" },
+    { l: "(b)(ii)", t: "Expand and simplify: $(x - 3)(x + 4) - 6x - x(x - 2)$", m: "3 marks",
+      a: "$x^2 + x - 12 - 6x - x^2 + 2x = -3x - 12$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $(6x^2 - y^2 - 4xy) - (3y^2 - 2x^2 + xy)$", m: "3 marks",
+      a: "$8x^2 - 4y^2 - 5xy$" },
+    { l: "(b)(i)", t: "Factorize completely: $6m^3n^2p^3 - 3m^2n^3p^3 - 3mn^4p^3$", m: "3 marks",
+      a: "$3mn^2p^3(2m+n)(m-n)$" },
+    { l: "(b)(ii)", t: "Factorize completely: $25b^2 - 36$", m: "2 marks",
+      a: "$(5b-6)(5b+6)$" },
+    { l: "(b)(iii)", t: "Factorize completely: $x^2 - 2x - 15$", m: "2 marks",
+      a: "$(x-5)(x+3)$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $@frac{y^2 + 5y + 6}{y + 2}$", m: "3 marks",
+      a: "$@frac{(y+2)(y+3)}{y+2} = y+3$, with $y @neq -2$" },
+    { l: "(b)", t: "Simplify: $@frac{x^2 - 25}{x^2 + 3x - 4} @times @frac{x + 4}{x + 5}$", m: "3 marks",
+      a: "$@frac{(x-5)(x+5)}{(x+4)(x-1)} @times @frac{x+4}{x+5} = @frac{x-5}{x-1}$, with $x @neq 1, -4, -5$" },
+    { l: "(c)", t: "Simplify completely: $@frac{t^2 - 4}{t^2 + 2t - 3} @div @frac{t^2 + 4t + 4}{t^2 + 3t}$", m: "4 marks",
+      a: "$@frac{(t-2)(t+2)}{(t+3)(t-1)} @times @frac{t(t+3)}{(t+2)^2} = @frac{t(t-2)}{(t-1)(t+2)}$, with $t @neq 1, -2, -3, 0$" }
+  ]}
+]},
+{ no: 7, questions: [
+  { parts: [
+    { l: "(a)", t: "Complete the following table.", m: "3 marks",
+      tb: { h: ["FRACTION", "DECIMAL", "PERCENTAGE (%)"], r: [["$@frac{5}{8}$", "", ""], ["", "0.6", ""], ["", "", "85%"]] },
+      at: [["$@frac{5}{8}$", "$0.625$", "$62.5%$"], ["$@frac{3}{5}$", "$0.6$", "$60%$"], ["$@frac{17}{20}$", "$0.85$", "$85%$"]] },
+    { l: "(b)(i)", t: "Evaluate without using a calculator: $[ - ( 12 - 2 ) @div 5 ] + 3^3$", m: "3 marks",
+      a: "$[-10 @div 5] + 27 = -2 + 27 = 25$" },
+    { l: "(b)(ii)", t: "Evaluate without using a calculator: $20 + [ 16 @div 4 - 3(4 + 1) + 6 ]$", m: "3 marks",
+      a: "$20 + [4 - 15 + 6] = 20 - 5 = 15$" },
+    { l: "(c)", t: "Calculate $(2500)(1 + 0.12)^3$ using a calculator. Round to four decimal places.", m: "1 mark",
+      a: "$(2500)(1.404928) = 3512.3200$" }
+  ]},
+  { parts: [
+    { l: "(a)(i)", t: "Evaluate without using a calculator: $( @frac{3}{5} + @frac{1}{10} ) @div ( @frac{7}{12} @times @frac{3}{14} )$", m: "3 marks",
+      a: "$@frac{7}{10} @div @frac{1}{8} = @frac{7}{10} @times 8 = @frac{28}{5}$" },
+    { l: "(a)(ii)", t: "Evaluate without using a calculator: $@frac{7}{12} - @frac{1}{4}$", m: "2 marks",
+      a: "$@frac{7}{12} - @frac{3}{12} = @frac{1}{3}$" },
+    { l: "(b)(i)", t: "Expand and simplify: $(5a - 2)(3b + 4)$", m: "2 marks",
+      a: "$15ab + 20a - 6b - 8$" },
+    { l: "(b)(ii)", t: "Expand and simplify: $(x + 2)(x - 5) - 4x - x(x + 3)$", m: "3 marks",
+      a: "$x^2 - 3x - 10 - 4x - x^2 - 3x = -10x - 10$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $(2x^2 - 5y^2 + 3xy) - (4y^2 - x^2 - 2xy)$", m: "3 marks",
+      a: "$3x^2 + 5xy - 9y^2$" },
+    { l: "(b)(i)", t: "Factorize completely: $4m^3n^3p^2 - 2m^2n^4p^2 - 6mn^5p^2$", m: "3 marks",
+      a: "$2mn^3p^2(2m-3n)(m+n)$" },
+    { l: "(b)(ii)", t: "Factorize completely: $64b^2 - 9$", m: "2 marks",
+      a: "$(8b-3)(8b+3)$" },
+    { l: "(b)(iii)", t: "Factorize completely: $x^2 - 13x + 36$", m: "2 marks",
+      a: "$(x-4)(x-9)$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $@frac{z^2 - z - 12}{z - 4}$", m: "3 marks",
+      a: "$@frac{(z-4)(z+3)}{z-4} = z+3$, with $z @neq 4$" },
+    { l: "(b)", t: "Simplify: $@frac{x^2 - 49}{x^2 + 2x - 35} @times @frac{x - 5}{x + 6}$", m: "3 marks",
+      a: "$@frac{(x-7)(x+7)}{(x+7)(x-5)} @times @frac{x-5}{x+6} = @frac{x-7}{x+6}$, with $x @neq -7, 5, -6$" },
+    { l: "(c)", t: "Simplify completely: $@frac{v^2 - 25}{v^2 - 4} @div @frac{v^2 + 5v}{v^2 + 4v + 4}$", m: "4 marks",
+      a: "$@frac{(v-5)(v+5)}{(v-2)(v+2)} @times @frac{(v+2)^2}{v(v+5)} = @frac{(v-5)(v+2)}{v(v-2)}$, with $v @neq 0, 2, -2, -5$" }
+  ]}
+]},
+{ no: 8, questions: [
+  { parts: [
+    { l: "(a)", t: "Complete the following table.", m: "3 marks",
+      tb: { h: ["FRACTION", "DECIMAL", "PERCENTAGE (%)"], r: [["$@frac{13}{20}$", "", ""], ["", "0.04", ""], ["", "", "350%"]] },
+      at: [["$@frac{13}{20}$", "$0.65$", "$65%$"], ["$@frac{1}{25}$", "$0.04$", "$4%$"], ["$@frac{7}{2}$", "$3.5$", "$350%$"]] },
+    { l: "(b)(i)", t: "Evaluate without using a calculator: $[ - ( 6 + 4 ) @div 5 ] + 2^5$", m: "3 marks",
+      a: "$[-10 @div 5] + 32 = -2 + 32 = 30$" },
+    { l: "(b)(ii)", t: "Evaluate without using a calculator: $6 + [ 15 @div 5 - 2(9 - 4) + 3 ]$", m: "3 marks",
+      a: "$6 + [3 - 10 + 3] = 6 - 4 = 2$" },
+    { l: "(c)", t: "Calculate $(2000)(1 + 0.06)^4$ using a calculator. Round to four decimal places.", m: "1 mark",
+      a: "$(2000)(1.26247696) = 2524.9539$" }
+  ]},
+  { parts: [
+    { l: "(a)(i)", t: "Evaluate without using a calculator: $( @frac{5}{9} + @frac{1}{6} ) @div ( @frac{2}{3} @times @frac{3}{10} )$", m: "3 marks",
+      a: "$@frac{13}{18} @div @frac{1}{5} = @frac{13}{18} @times 5 = @frac{65}{18}$" },
+    { l: "(a)(ii)", t: "Evaluate without using a calculator: $@frac{3}{4} - @frac{5}{8}$", m: "2 marks",
+      a: "$@frac{6}{8} - @frac{5}{8} = @frac{1}{8}$" },
+    { l: "(b)(i)", t: "Expand and simplify: $(2y - 7)(5x + 3)$", m: "2 marks",
+      a: "$10xy + 6y - 35x - 21$" },
+    { l: "(b)(ii)", t: "Expand and simplify: $(x - 4)(x + 6) - 3x - x(x + 5)$", m: "3 marks",
+      a: "$x^2 + 2x - 24 - 3x - x^2 - 5x = -6x - 24$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $(3x^2 - 4y^2 + 2xy) - (y^2 - 5x^2 - 3xy)$", m: "3 marks",
+      a: "$8x^2 - 5y^2 + 5xy$" },
+    { l: "(b)(i)", t: "Factorize completely: $6m^2n^2p^2 + 10mn^3p^2 - 4n^4p^2$", m: "3 marks",
+      a: "$2n^2p^2(3m-n)(m+2n)$" },
+    { l: "(b)(ii)", t: "Factorize completely: $81b^2 - 16$", m: "2 marks",
+      a: "$(9b-4)(9b+4)$" },
+    { l: "(b)(iii)", t: "Factorize completely: $x^2 - 2x - 24$", m: "2 marks",
+      a: "$(x-6)(x+4)$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $@frac{w^2 + 2w - 35}{w + 7}$", m: "3 marks",
+      a: "$@frac{(w+7)(w-5)}{w+7} = w-5$, with $w @neq -7$" },
+    { l: "(b)", t: "Simplify: $@frac{x^2 - 4}{x^2 + 4x + 3} @times @frac{x + 3}{x + 2}$", m: "3 marks",
+      a: "$@frac{(x-2)(x+2)}{(x+1)(x+3)} @times @frac{x+3}{x+2} = @frac{x-2}{x+1}$, with $x @neq -1, -2, -3$" },
+    { l: "(c)", t: "Simplify completely: $@frac{q^2 - 9}{q^2 - 3q - 4} @div @frac{q^2 - 3q}{q^2 + 2q + 1}$", m: "4 marks",
+      a: "$@frac{(q-3)(q+3)}{(q-4)(q+1)} @times @frac{(q+1)^2}{q(q-3)} = @frac{(q+3)(q+1)}{q(q-4)}$, with $q @neq -1, 0, 3, 4$" }
+  ]}
+]},
+{ no: 9, questions: [
+  { parts: [
+    { l: "(a)", t: "Complete the following table.", m: "3 marks",
+      tb: { h: ["FRACTION", "DECIMAL", "PERCENTAGE (%)"], r: [["$@frac{11}{8}$", "", ""], ["", "0.06", ""], ["", "", "35%"]] },
+      at: [["$@frac{11}{8}$", "$1.375$", "$137.5%$"], ["$@frac{3}{50}$", "$0.06$", "$6%$"], ["$@frac{7}{20}$", "$0.35$", "$35%$"]] },
+    { l: "(b)(i)", t: "Evaluate without using a calculator: $[ - ( 5 + 7 ) @div 4 ] + 4^2$", m: "3 marks",
+      a: "$[-12 @div 4] + 16 = -3 + 16 = 13$" },
+    { l: "(b)(ii)", t: "Evaluate without using a calculator: $27 + [ 18 @div 6 - 3(7 - 2) + 10 ]$", m: "3 marks",
+      a: "$27 + [3 - 15 + 10] = 27 - 2 = 25$" },
+    { l: "(c)", t: "Calculate $(4000)(1 + 0.02)^5$ using a calculator. Round to four decimal places.", m: "1 mark",
+      a: "$(4000)(1.1040808032) = 4416.3232$" }
+  ]},
+  { parts: [
+    { l: "(a)(i)", t: "Evaluate without using a calculator: $( @frac{3}{4} + @frac{5}{6} ) @div ( @frac{2}{9} @times @frac{9}{10} )$", m: "3 marks",
+      a: "$@frac{19}{12} @div @frac{1}{5} = @frac{19}{12} @times 5 = @frac{95}{12}$" },
+    { l: "(a)(ii)", t: "Evaluate without using a calculator: $@frac{7}{12} - @frac{2}{9}$", m: "2 marks",
+      a: "$@frac{21}{36} - @frac{8}{36} = @frac{13}{36}$" },
+    { l: "(b)(i)", t: "Expand and simplify: $(6a - 1)(2b + 5)$", m: "2 marks",
+      a: "$12ab + 30a - 2b - 5$" },
+    { l: "(b)(ii)", t: "Expand and simplify: $(x - 6)(x + 3) - 2x - x(x - 4)$", m: "3 marks",
+      a: "$x^2 - 3x - 18 - 2x - x^2 + 4x = -x - 18$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $(4x^2 - 3y^2 - xy) - (2y^2 - 5x^2 + 3xy)$", m: "3 marks",
+      a: "$9x^2 - 5y^2 - 4xy$" },
+    { l: "(b)(i)", t: "Factorize completely: $6m^3np^2 - 2m^2n^2p^2 - 4mn^3p^2$", m: "3 marks",
+      a: "$2mnp^2(3m+2n)(m-n)$" },
+    { l: "(b)(ii)", t: "Factorize completely: $9b^2 - 64$", m: "2 marks",
+      a: "$(3b-8)(3b+8)$" },
+    { l: "(b)(iii)", t: "Factorize completely: $x^2 + 2x - 35$", m: "2 marks",
+      a: "$(x+7)(x-5)$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $@frac{r^2 - 2r - 24}{r - 6}$", m: "3 marks",
+      a: "$@frac{(r-6)(r+4)}{r-6} = r+4$, with $r @neq 6$" },
+    { l: "(b)", t: "Simplify: $@frac{x^2 - 81}{x^2 + 6x + 9} @times @frac{x + 3}{x + 9}$", m: "3 marks",
+      a: "$@frac{(x-9)(x+9)}{(x+3)^2} @times @frac{x+3}{x+9} = @frac{x-9}{x+3}$, with $x @neq -3, -9$" },
+    { l: "(c)", t: "Simplify completely: $@frac{y^2 - 5y + 6}{y^2 - 1} @div @frac{y^2 - 2y}{y^2 + 2y + 1}$", m: "4 marks",
+      a: "$@frac{(y-2)(y-3)}{(y-1)(y+1)} @times @frac{(y+1)^2}{y(y-2)} = @frac{(y-3)(y+1)}{y(y-1)}$, with $y @neq 0, 1, -1, 2$" }
+  ]}
+]},
+{ no: 10, questions: [
+  { parts: [
+    { l: "(a)", t: "Complete the following table.", m: "3 marks",
+      tb: { h: ["FRACTION", "DECIMAL", "PERCENTAGE (%)"], r: [["$@frac{4}{5}$", "", ""], ["", "0.005", ""], ["", "", "425%"]] },
+      at: [["$@frac{4}{5}$", "$0.8$", "$80%$"], ["$@frac{1}{200}$", "$0.005$", "$0.5%$"], ["$@frac{17}{4}$", "$4.25$", "$425%$"]] },
+    { l: "(b)(i)", t: "Evaluate without using a calculator: $[ - ( 14 - 2 ) @div 3 ] + 3^4$", m: "3 marks",
+      a: "$[-12 @div 3] + 81 = -4 + 81 = 77$" },
+    { l: "(b)(ii)", t: "Evaluate without using a calculator: $50 + [ 20 @div 4 - 5(4 + 3) + 8 ]$", m: "3 marks",
+      a: "$50 + [5 - 35 + 8] = 50 - 22 = 28$" },
+    { l: "(c)", t: "Calculate $(7000)(1 + 0.015)^3$ using a calculator. Round to four decimal places.", m: "1 mark",
+      a: "$(7000)(1.045678375) = 7319.7486$" }
+  ]},
+  { parts: [
+    { l: "(a)(i)", t: "Evaluate without using a calculator: $( @frac{2}{5} + @frac{3}{10} ) @div ( @frac{4}{7} @times @frac{5}{6} )$", m: "3 marks",
+      a: "$@frac{7}{10} @div @frac{10}{21} = @frac{7}{10} @times @frac{21}{10} = @frac{147}{100}$" },
+    { l: "(a)(ii)", t: "Evaluate without using a calculator: $@frac{1}{4} - @frac{5}{12}$", m: "2 marks",
+      a: "$@frac{3}{12} - @frac{5}{12} = -@frac{1}{6}$" },
+    { l: "(b)(i)", t: "Expand and simplify: $(7m + 2)(3n - 4)$", m: "2 marks",
+      a: "$21mn - 28m + 6n - 8$" },
+    { l: "(b)(ii)", t: "Expand and simplify: $(x + 3)(x - 4) + 2x - x(x - 5)$", m: "3 marks",
+      a: "$x^2 - x - 12 + 2x - x^2 + 5x = 6x - 12$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $(5x^2 + 2y^2 - 3xy) - (2x^2 - 4y^2 + 5xy)$", m: "3 marks",
+      a: "$3x^2 + 6y^2 - 8xy$" },
+    { l: "(b)(i)", t: "Factorize completely: $6m^3np + 3m^2n^2p - 9mn^3p$", m: "3 marks",
+      a: "$3mnp(2m+3n)(m-n)$" },
+    { l: "(b)(ii)", t: "Factorize completely: $36b^2 - 100$", m: "2 marks",
+      a: "$4(3b-5)(3b+5)$" },
+    { l: "(b)(iii)", t: "Factorize completely: $x^2 - 5x - 14$", m: "2 marks",
+      a: "$(x-7)(x+2)$" }
+  ]},
+  { parts: [
+    { l: "(a)", t: "Simplify: $@frac{t^2 - 3t - 18}{t + 3}$", m: "3 marks",
+      a: "$@frac{(t+3)(t-6)}{t+3} = t-6$, with $t @neq -3$" },
+    { l: "(b)", t: "Simplify: $@frac{x^2 - 25}{x^2 - 2x - 15} @times @frac{x + 3}{x - 5}$", m: "3 marks",
+      a: "$@frac{(x-5)(x+5)}{(x-5)(x+3)} @times @frac{x+3}{x-5} = @frac{x+5}{x-5}$, with $x @neq 5, -3$" },
+    { l: "(c)", t: "Simplify completely: $@frac{m^2 - 16}{m^2 - 3m - 4} @div @frac{m^2 - 4m}{m^2 - 2m + 1}$", m: "4 marks",
+      a: "$@frac{(m-4)(m+4)}{(m-4)(m+1)} @times @frac{(m-1)^2}{m(m-4)} = @frac{(m+4)(m-1)^2}{m(m+1)(m-4)}$, with $m @neq -1, 0, 1, 4$" }
+  ]}
 ]}
 ];
 
@@ -501,10 +701,8 @@ panel.addEventListener("click", function (e) {
 
 // Deep link to a set with a bare token, e.g. #set3
 var start = 0;
-var m = /^set(\d)$/.exec(location.hash.slice(1));
+var m = /^set(\d+)$/.exec(location.hash.slice(1));
 if (m) { var n = Number(m[1]) - 1; if (n >= 0 && n < SETS.length) start = n; }
 currentIdx = start;
 showTab(start, false);
 </script>
-</body>
-</html>
